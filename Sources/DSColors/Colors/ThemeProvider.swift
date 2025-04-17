@@ -10,6 +10,8 @@ import SwiftUI
 
 @MainActor
 public struct ThemeProvider {
+    public static var isDynamicTypeEnabled: Bool = false
+    
     private let primaryColors: PrimaryColors?
     private let appBackgroundColors: AppBackgroundColors?
     private let separatorColors: SeparatorColors?
@@ -24,7 +26,8 @@ public struct ThemeProvider {
                 textColors: TextColors? = nil,
                 linkColors: LinkColors? = nil,
                 surfaceColors: SurfaceColors? = nil,
-                stateColors: StateColors? = nil) {
+                stateColors: StateColors? = nil,
+                isDynamicTypeEnabled: Bool = false) {
         self.primaryColors = primaryColors
         self.appBackgroundColors = appBackgroundColors
         self.separatorColors = separatorColors
@@ -32,6 +35,7 @@ public struct ThemeProvider {
         self.linkColors = linkColors
         self.surfaceColors = surfaceColors
         self.stateColors = stateColors
+        ThemeProvider.isDynamicTypeEnabled = isDynamicTypeEnabled
     }
     
     public func config() {
@@ -42,6 +46,10 @@ public struct ThemeProvider {
         ThemeColors.link = self.linkColors ?? EmeraldLinkColors()
         ThemeColors.surface = self.surfaceColors ?? EmeraldSurfaceColors()
         ThemeColors.state = self.stateColors ?? EmeraldStateColors()
+    }
+    
+    public static func enableDynamicTypes(_ isEnabled: Bool) {
+        ThemeProvider.isDynamicTypeEnabled = isEnabled
     }
 }
 
