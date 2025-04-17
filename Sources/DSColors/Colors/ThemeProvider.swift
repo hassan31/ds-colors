@@ -8,9 +8,8 @@
 import Foundation
 import SwiftUI
 
-@MainActor
 public struct ThemeProvider {
-    public static var isDynamicTypeEnabled: Bool = false
+    nonisolated(unsafe) public static var isDynamicTypeEnabled: Bool = false
     
     private let primaryColors: PrimaryColors?
     private let appBackgroundColors: AppBackgroundColors?
@@ -53,16 +52,15 @@ public struct ThemeProvider {
     }
 }
 
-@MainActor
 public struct ThemeColors {
-    public static let global: GlobalColors = DefaultGlobalColors()
-    public static let banner: BannerColors = DefaultBannerColors()
-    
-    public static var primary: PrimaryColors = EmeraldColors()
-    public static var appBackground: AppBackgroundColors = EmeraldAppBackgroundColors()
-    public static var separator: SeparatorColors = EmeraldSeparatorColors()
-    public static var text: TextColors = EmeraldTextColors()
-    public static var link: LinkColors = EmeraldLinkColors()
-    public static var surface: SurfaceColors = EmeraldSurfaceColors()
-    public static var state: StateColors = EmeraldStateColors()
+    nonisolated(unsafe) public static let global: GlobalColors = DefaultGlobalColors()
+    nonisolated(unsafe) public static let banner: BannerColors = DefaultBannerColors()
+
+    nonisolated(unsafe) public static var primary: PrimaryColors = EmeraldColors()
+    nonisolated(unsafe) public static var appBackground: AppBackgroundColors = EmeraldAppBackgroundColors()
+    nonisolated(unsafe) public static var separator: SeparatorColors = EmeraldSeparatorColors()
+    nonisolated(unsafe) public static var text: TextColors = EmeraldTextColors()
+    nonisolated(unsafe) public static var link: LinkColors = EmeraldLinkColors()
+    nonisolated(unsafe) public static var surface: SurfaceColors = EmeraldSurfaceColors()
+    nonisolated(unsafe) public static var state: StateColors = EmeraldStateColors()
 }

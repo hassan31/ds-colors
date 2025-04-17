@@ -133,7 +133,6 @@ public struct EmeraldTextColors: TextColors {
     public init() { }
 }
 
-@MainActor
 public protocol LinkColors {
     var primary: ColorAsset { get }
     var destructive: ColorAsset { get }
@@ -182,7 +181,6 @@ public struct EmeraldSurfaceColors: SurfaceColors {
     public init() { }
 }
 
-@MainActor
 public protocol StateColors {
     var primaryPressed: ColorAsset { get }
     var secondaryPressed: ColorAsset { get }
